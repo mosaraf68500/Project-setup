@@ -14,7 +14,7 @@ import Footer from "../Components/Footer/Footer";
         Component:Root,
         children:[
             {
-                index:true, Component:Home
+                index:"/", Component:Home
             },
             {
                 path:"/login",

@@ -1,5 +1,6 @@
 import React from "react";
 import image from "../../assets/Business_SVG.svg";
+import { NavLink } from "react-router";
 
 const Home = () => {
   return (
@@ -19,20 +20,18 @@ const Home = () => {
             No more scattered docs. Just click & go!
           </p>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-            <a
-              rel="noopener noreferrer"
-              href="#tools"
+            <NavLink
+              to="/tools"
               className="px-8 py-3 text-lg font-semibold rounded bg-purple-500 text-white hover:bg-purple-600 transition"
             >
               Get Started
-            </a>
-            <a
-              rel="noopener noreferrer"
-              href="#docs"
+            </NavLink>
+            <NavLink
+              to="/docs"
               className="px-8 py-3 text-lg font-semibold border rounded border-gray-300 text-gray-100 hover:border-purple-400"
             >
               How It Works
-            </a>
+            </NavLink>
           </div>
         </div>
         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
