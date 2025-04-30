@@ -4,10 +4,10 @@ import NavBar from '../../Components/NavBar/NavBar';
 
 const Root = () => {
     return (
-        <div>
+        <div className=' mx-auto'>
             <NavBar></NavBar>
             <Outlet></Outlet>
-            
+
         </div>
     );
 };

@@ -1,21 +1,36 @@
 import React from "react";
 import { NavLink } from "react-router";
+import image from "../../assets/icon.png";
+import "../../App.css";
 
 export default function NavBar() {
+  const Links = (
+    <>
+      <li>
+        <NavLink className="font-semibold" to="/">
+          Home
+        </NavLink>{" "}
+      </li>
+      <li>
+        <NavLink className="font-semibold" to="/tools">
+          Tools
+        </NavLink>{" "}
+      </li>
+      <li>
+        <NavLink className="font-semibold" to="/docs">
+          Docs
+        </NavLink>{" "}
+      </li>
 
-    const Links=<>
-    
-    <li><NavLink to="/">Home</NavLink> </li>
-    <li><NavLink to="/">Tools</NavLink> </li>
-    <li><NavLink to="/">Docs</NavLink> </li>
-
-    <li><NavLink to="/">GitHub</NavLink> </li>
-
-
-
+      <li>
+        <NavLink className="font-semibold" to="/github">
+          GitHub
+        </NavLink>{" "}
+      </li>
     </>
+  );
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    <div className="w-full navbar bg-gray-100 px-4">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -39,21 +54,33 @@ export default function NavBar() {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-         {Links}
+            {Links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl"> P.Setup </a>
+        <div className="flex gap-1.5 justify-center items-center">
+          <img className="w-[30px]" src={image} alt="" />
+          <NavLink to="/" className=" text-lg font-semibold">
+            {" "}
+            <span
+              className="text-2xl text-[#189ab4]"
+            >
+              P.
+            </span>
+            Setup{" "}
+          </NavLink>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          {Links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{Links}</ul>
       </div>
       <div className="navbar-end flex gap-4">
-        <a className="btn">SignIn</a>
-        <a className="btn">SignUp</a>
+        <NavLink to="/login" className="btn">
+          SignIn
+        </NavLink>
+        <NavLink to="/registetion" className="btn">
+          SignUp
+        </NavLink>
       </div>
-      
     </div>
   );
 }
