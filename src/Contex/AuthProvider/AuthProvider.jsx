@@ -5,13 +5,23 @@ import { auth } from "../../Firebase/firebase.config";
 
 const AuthProvider = ({ children }) => {
 
-    // create user
+    // create user/ registetion
 
     const createUser=(email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password);
     }
+
+
+    // Login user
+
+    const SignInUser=(email,password)=>{
+        return signInWithEmailAndPassword(auth,email,password);
+    }
+
+
   const userInfo = {
     createUser,
+    SignInUser
 
   };
 

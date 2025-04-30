@@ -27,7 +27,7 @@ const handeSignUpForm=(e)=>{
 
   return (
     <div className="w-full mx-auto mt-10 max-w-md p-8 space-y-3 rounded-xl bg-[#050a30] text-white">
-      <h1 className="text-2xl font-bold text-center">Login</h1>
+      <h1 className="text-2xl font-bold text-center">SignUp</h1>
       <form onSubmit={handeSignUpForm} className="space-y-6">
         <div className="space-y-1 text-sm">
           <label htmlFor="username" className="block dark:text-gray-200">
