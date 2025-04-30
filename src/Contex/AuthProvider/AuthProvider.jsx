@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AuthContex } from "../AuthContex/AuthContex";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "../../Firebase/firebase.config";
 
 const AuthProvider = ({ children }) => {
+
+    const [user,setUser]=useState(null);
 
     // create user/ registetion
 
@@ -19,9 +21,30 @@ const AuthProvider = ({ children }) => {
     }
 
 
+    // signOut
+
+    const signOutUser=()=>{
+        signOut(auth);
+    }
+
+
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, currentUser => {
+            console.log('inside useEffect on auth state change', currentUser);
+            setUser(currentUser);
+           
+        })
+        return () => {
+            unSubscribe();
+        }
+    }, [])
+
+
   const userInfo = {
     createUser,
-    SignInUser
+    SignInUser,
+    user,
+    signOutUser
 
   };
 

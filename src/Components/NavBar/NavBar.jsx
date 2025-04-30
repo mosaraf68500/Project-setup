@@ -1,9 +1,17 @@
-import React from "react";
+import React, { use } from "react";
 import { NavLink } from "react-router";
 import image from "../../assets/icon.png";
 import "../../App.css";
+import { AuthContex } from "../../Contex/AuthContex/AuthContex";
 
 export default function NavBar() {
+  const {user,signOutUser} = use(AuthContex);
+
+
+  const handleSignOut=()=>{
+    signOutUser();
+  }
+
   const Links = (
     <>
       <li>
@@ -61,11 +69,7 @@ export default function NavBar() {
           <img className="w-[30px]" src={image} alt="" />
           <NavLink to="/" className=" text-lg font-semibold">
             {" "}
-            <span
-              className="text-2xl text-[#189ab4]"
-            >
-              P.
-            </span>
+            <span className="text-2xl text-[#189ab4]">P.</span>
             Setup{" "}
           </NavLink>
         </div>
@@ -74,12 +78,15 @@ export default function NavBar() {
         <ul className="menu menu-horizontal px-1">{Links}</ul>
       </div>
       <div className="navbar-end flex gap-4">
-        <NavLink to="/login" className="btn">
-          SignIn
-        </NavLink>
-        <NavLink to="/registetion" className="btn">
-          SignUp
-        </NavLink>
+        {user ? (
+          <NavLink onClick={handleSignOut} to="/" className="btn">
+            LogOut
+          </NavLink>
+        ) : (
+          <NavLink to="/login" className="btn">
+            SignIn
+          </NavLink>
+        )}
       </div>
     </div>
   );
