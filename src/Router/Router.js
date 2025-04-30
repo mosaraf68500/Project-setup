@@ -6,6 +6,7 @@ import Registetion from "../Authentication/Resgistation/Registetion";
 import Tools from "../Components/Tools/Tools";
 import Docs from "../Components/Docs/Docs";
 import GitHub from "../Components/GitHub/GitHub";
+import Footer from "../Components/Footer/Footer";
 
  export const router=createBrowserRouter([
     {
@@ -36,6 +37,10 @@ import GitHub from "../Components/GitHub/GitHub";
             {
                 path:"github",
                 Component:GitHub
+            },
+            {
+                path:"footer",
+                Component:Footer
             }
 
 

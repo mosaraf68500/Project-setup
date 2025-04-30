@@ -1,6 +1,8 @@
 import React, { use } from "react";
 import { AuthContex } from "../../Contex/AuthContex/AuthContex";
 import { NavLink } from "react-router";
+import { toast, ToastContainer } from "react-toastify";
+
 
 
 const Registetion = () => {
@@ -14,10 +16,39 @@ const handeSignUpForm=(e)=>{
     const email=target.email.value;
     const password=target.password.value;
     console.log(name,email,password)
+
+if(password.length <6){
+    toast.error("password must be minimum 6 character.")
+    return;
+}
+if (!/(?=.*\d)/.test(password)) {
+  toast.error("Password must contain at least one number.");
+  return;
+}
+
+if (!/(?=.*[A-Z])/.test(password)) {
+  toast.error("Password must contain at least one uppercase letter.");
+  return;
+}
+
+if (!/(?=.*[a-z])/.test(password)) {
+  toast.error("Password must contain at least one lowercase letter.");
+  return;
+}
+
+// if (!/(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/.test(password)) {
+//   toast.error("Password must contain at least one special character.");
+//   return;
+// }
+
+
+
     // create user
     createUser(email,password)
     .then(result =>{
         console.log(result);
+
+        toast.success("SignUp successfull!")
     })
 
     .catch(error =>{
@@ -28,6 +59,7 @@ const handeSignUpForm=(e)=>{
 
   return (
     <div className="w-full mx-auto mt-10 max-w-md p-8 space-y-3 rounded-xl bg-[#050a30] text-white">
+          <ToastContainer />
       <h1 className="text-2xl font-bold text-center">SignUp</h1>
       <form onSubmit={handeSignUpForm} className="space-y-6">
         <div className="space-y-1 text-sm">

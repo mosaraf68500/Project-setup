@@ -35,6 +35,12 @@ export default function NavBar() {
           GitHub
         </NavLink>{" "}
       </li>
+
+      <li>
+        <NavLink className="font-semibold" to="/registetion">
+          Registetion
+        </NavLink>{" "}
+      </li>
     </>
   );
   return (

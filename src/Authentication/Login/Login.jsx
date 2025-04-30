@@ -17,7 +17,29 @@ const Login = () => {
     const password = target.password.value;
     console.log(email, password);
 
-    if()
+   
+
+    if (!/(?=.*\d)/.test(password)) {
+      toast.error("Password must contain at least one number.");
+      return;
+    }
+    
+    if (!/(?=.*[A-Z])/.test(password)) {
+      toast.error("Password must contain at least one uppercase letter.");
+      return;
+    }
+    
+    if (!/(?=.*[a-z])/.test(password)) {
+      toast.error("Password must contain at least one lowercase letter.");
+      return;
+    }
+    
+    // if (!/(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/.test(password)) {
+    //   toast.error("Password must contain at least one special character.");
+    //   return;
+    // }
+    
+    
 
     SignInUser(email, password)
       .then((result) => {
