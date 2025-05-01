@@ -7,6 +7,7 @@ import Tools from "../Components/Tools/Tools";
 import Docs from "../Components/Docs/Docs";
 import GitHub from "../Components/GitHub/GitHub";
 import Footer from "../Components/Footer/Footer";
+import Error from "../Error/Error";
 
  export const router=createBrowserRouter([
     {
@@ -41,6 +42,10 @@ import Footer from "../Components/Footer/Footer";
             {
                 path:"footer",
                 Component:Footer
+            },
+            {
+                path:"*",
+                Component:Error
             }
 
 
