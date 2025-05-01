@@ -20,26 +20,26 @@ const Tools = () => {
   return (
    <div className="bg-[#111827] py-4">
      <div className="w-2/3  my-12 gap-6 mx-auto grid grid-cols-5 justify-center items-center">
-      <FancyButton text="Home" to="/" />
-      <FancyButton text="About Us" to="/about" />
-      <FancyButton text="Contact" to="/contact" />
-      <FancyButton text="Home" to="/" />
-      <FancyButton text="About Us" to="/about" />
-      <FancyButton text="Contact" to="/contact" />
+      <FancyButton text="React" to="/" />
+      <FancyButton text="React Router" to="/about" />
+      <FancyButton text="Tailwind CSS" to="/contact" />
+      <FancyButton text="DaisyUI" to="/" />
+      <FancyButton text="MambaUI" to="/about" />
+      <FancyButton text="Button" to="/contact" />
 
-      <FancyButton text="Home" to="/" />
-      <FancyButton text="About Us" to="/about" />
-      <FancyButton text="Contact" to="/contact" />
-      <FancyButton text="Home" to="/" />
-      <FancyButton text="About Us" to="/about" />
-      <FancyButton text="Contact" to="/contact" />
+      <FancyButton text="Navbar" to="/" />
+      <FancyButton text="Footer" to="/about" />
+      <FancyButton text="Toast" to="/contact" />
+      <FancyButton text="React Icon" to="/" />
+      <FancyButton text="Google Font" to="/about" />
+      <FancyButton text="FontAswesome" to="/contact" />
 
-      <FancyButton text="Home" to="/" />
-      <FancyButton text="About Us" to="/about" />
-      <FancyButton text="Contact" to="/contact" />
+      <FancyButton text="Firebase" to="/" />
+      <FancyButton text="MongoDB" to="/about" />
+      <FancyButton text="NodeJS" to="/contact" />
 
-      <FancyButton text="Home" to="/" />
-      <FancyButton text="About Us" to="/about" />
+      <FancyButton text="Express js" to="/" />
+      <FancyButton text="TypeScript" to="/about" />
       <FancyButton text="Contact" to="/contact" />
 
       <FancyButton text="Home" to="/" />
